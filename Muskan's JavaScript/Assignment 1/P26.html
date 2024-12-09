@@ -1,0 +1,43 @@
+<html>
+<head>
+
+</head>
+<body>
+    <h1>Count the select elements </h1>
+    <table>
+        <form>
+            <tr>
+                <td>City : </td>
+                <td>
+                    <select id="i1">
+                        <option >Mumbai</option>
+                        <option>Surat</option>
+                        <option>Bharuch</option>
+                        <option>Udaipur</option>
+                        <option>Jaipur</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="button" name="b1" value="Display" id="b1" onclick="display()" /></td>
+            </tr>
+        </form>
+    </table>
+    <script type="text/javascript" language="javascript">
+        function display()
+        {
+            let a=document.getElementById("i1");
+            let b=[];
+            for(let i=0;i<a.length;i++)
+            {
+                b[i]=a.options[i].value;
+            }
+            for(i=0;i<a.length;i++)
+            {
+                alert("The options are : "+b[i]);
+            }
+        }
+    </script>
+</body>
+</html>

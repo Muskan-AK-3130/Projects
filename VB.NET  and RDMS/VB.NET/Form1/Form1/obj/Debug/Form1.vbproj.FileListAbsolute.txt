@@ -1,0 +1,12 @@
+B:\Sem4_50\VB.NET  and RDMS\VB.NET\Form1\Form1\bin\Debug\Form1.exe.config
+B:\Sem4_50\VB.NET  and RDMS\VB.NET\Form1\Form1\bin\Debug\Form1.exe
+B:\Sem4_50\VB.NET  and RDMS\VB.NET\Form1\Form1\bin\Debug\Form1.pdb
+B:\Sem4_50\VB.NET  and RDMS\VB.NET\Form1\Form1\bin\Debug\Form1.xml
+B:\Sem4_50\VB.NET  and RDMS\VB.NET\Form1\Form1\obj\Debug\Form1.vbproj.AssemblyReference.cache
+B:\Sem4_50\VB.NET  and RDMS\VB.NET\Form1\Form1\obj\Debug\Form1.Form1.resources
+B:\Sem4_50\VB.NET  and RDMS\VB.NET\Form1\Form1\obj\Debug\Form1.Resources.resources
+B:\Sem4_50\VB.NET  and RDMS\VB.NET\Form1\Form1\obj\Debug\Form1.vbproj.GenerateResource.cache
+B:\Sem4_50\VB.NET  and RDMS\VB.NET\Form1\Form1\obj\Debug\Form1.vbproj.CoreCompileInputs.cache
+B:\Sem4_50\VB.NET  and RDMS\VB.NET\Form1\Form1\obj\Debug\Form1.exe
+B:\Sem4_50\VB.NET  and RDMS\VB.NET\Form1\Form1\obj\Debug\Form1.xml
+B:\Sem4_50\VB.NET  and RDMS\VB.NET\Form1\Form1\obj\Debug\Form1.pdb

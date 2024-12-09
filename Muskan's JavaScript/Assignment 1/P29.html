@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <script>
+        function validate()
+        {
+            let a=document.getElementById("t1").value;
+            let b=document.getElementById("t2").value;
+            let c=document.getElementById("rb1").checked;
+            let d=document.getElementById("rb2").checked;
+            if(a=="")
+            {
+                document.getElementById("d1").innerHTML="Enter Name ";
+                document.getElementById("d1").style.color="red";
+            }
+            else{
+                document.getElementById("d1").innerHTML="Name Successfully Entered ";
+                document.getElementById("d1").style.color="green";
+            }
+            if(b=="")
+            {
+                document.getElementById("d2").innerHTML="Enter Age ";
+                document.getElementById("d2").style.color="red";
+            }
+            else if(b>=15 && b<20)
+            {
+                document.getElementById("d2").innerHTML="Age Successfully Entered ";
+                document.getElementById("d2").style.color="green";               
+            }
+            else
+            {
+                document.getElementById("d2").innerHTML="Enter Valid  Age ";
+                document.getElementById("d2").style.color="red";                
+            }
+            if(c==true || d==true)
+            {
+                document.getElementById("d3").innerHTML="Gender Successfully Selected ";
+                document.getElementById("d3").style.color="green"; 
+            }
+            else if(c==false && d==false)
+            {
+                document.getElementById("d3").innerHTML="Select Gender ";
+                document.getElementById("d3").style.color="red";                     
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <h1 style="text-align:center">Registration Form</h1>
+        <table>
+            <tr>
+                <th>Name</th>
+                <td><input type="text" name="t1" id="t1"/></td>
+                <td id="d1"></td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>
+                    <input type="text" name="t2" id="t2"/>
+                </td>
+                <td id="d2"></td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td><input type="radio" name="gender" id="rb1"/>Male
+                <input type="radio" name="gender" id="rb2"/>Female</td>
+                <td id="d3"></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="button" name="b1"  id="b1" value="Submit" onclick="validate()">
+                    <input type="reset" name="b2"  id="b2">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

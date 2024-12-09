@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery Get a Form Field Value</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#btn").click(function(){
+            $("#show").append($("#name").val()+" "+$("#phno").val()+" "+$("#email").val()+"<br>");
+        })
+    })
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text" id="name">
+        <input type="text" id="phno">
+        <input type="text" id="email">
+        <input type="button" id="btn" value="Display">
+        <div id="show"></div>
+    </form>
+</body>
+</html>

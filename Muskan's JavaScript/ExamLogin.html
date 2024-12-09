@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoginCookie</title>
+    <script src="Exam.js"></script>
+    <script>
+        function setCookie(cname,cvalue,expiry)
+        {
+            let expirydate=new Date();
+            expirydate.setDate(expirydate.getDate() + expiry);
+            document.cookie = cname + "=" + cvalue+ ";expires=" + expirydate.toUTCString()+";path=/;"
+        }
+        function getCookie(cname)
+        {
+            let nm=cname+"="
+            let decodedCookie=decodeURIComponent(document.cookie)
+            try
+            {
+                let cookieValue=document.cookie.split(";").find(row=>row.startsWith(nm)).split("=")[1]
+                return cookieValue
+            }catch(e)
+            {
+                return ""
+            }
+            return ""
+        }
+        function checkCookie()
+        {
+            let user=username1.value
+            let p=getCookie(user)
+            if(p!="")
+                alert("Welcome back "+user)
+            else
+                alert("Enter student details and check remember me")
+        }
+        function check_password()
+        {
+            let flag=0,i
+            let u=username1.value
+            let p=password1.value
+            let r=rememberMe.value
+            let cnt=localStorage.getItem("count")
+            for(i=0;i<cnt;i++)
+            {
+                let s=JSON.parse(localStorage.getItem("student"+i))
+                if(s==null)
+                    continue
+                if(u==s.username)
+                {
+                    if(s.password==p)
+                    {
+                        alert("Login Successfully")
+                        if(r)
+                        {
+                            let user="username"+i
+                            getCookie(user,u,7)
+                            alert("Data Remembered")
+                        }
+                        flag=1;
+                    }
+                    else
+                    {
+                        alert("Incorrect Password")
+                    }
+                }
+            }
+            if(flag==0)
+                alert("Incorrect Details")
+        }
+    </script>
+</head>
+<body onload="checkCookie()">
+    <form>
+        <table>
+            <tr>
+                <td>Username</td>
+                <td><input type="text" id="username1"></td>
+                <td id="s1"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="text" id="password1"></td>
+                <td id="s2"></td>
+            </tr>
+        </table>
+        <input type="checkbox" id="rememberMe">Remember Me
+        <input type="button" id="login" onclick="check_password()" value="Login">
+    </form>
+</body>
+</html>

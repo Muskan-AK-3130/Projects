@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Largest Element</title>
+</head>
+<script>
+    let a=[];
+    function input()
+    {
+        let i;
+        for(i=0;i<5;i++)
+        {
+            a.push(parseInt(prompt("Enter 5 elements of array")));
+        }
+    }
+    function largest()
+    {
+        let max=a[0];
+        let i;
+        for(i=0;i<5;i++)
+        {
+            if(a[i]>max)
+                max=a[i];
+        }
+        alert("Largest Number Is "+max);
+    }
+    input();
+    largest();
+</script>>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Longest Word</title>
+</head>
+<script>
+    function Validate()
+    {
+        let s=document.getElementById("n1").value
+        longestWord(s);
+    }
+    function longestWord(s)
+    {
+        let a=s.split(" ");
+        let i;
+        let ls=a[0];
+        for(i=0;i<a.length;i++)
+        {
+            if(ls.length<a[i].length)
+            {
+                ls=a[i];
+            }
+        }
+        document.getElementById("n2").value=ls; 
+        // console.log(ls); 
+    }
+    // document.write(s1);
+</script>
+<body>
+    <form>
+    <!-- <form name="Form" action="" onsubmit="return reverse()" method="post"> -->
+        Enter a String
+        <input type="text" id="n1" placeholder="Enter the String">
+        <br><br>
+        Longest Word
+        <input type="text" id="n2">
+        <input type="button" value="Find" id="b1" onclick="Validate()">
+    </form>
+</body>
+</html>

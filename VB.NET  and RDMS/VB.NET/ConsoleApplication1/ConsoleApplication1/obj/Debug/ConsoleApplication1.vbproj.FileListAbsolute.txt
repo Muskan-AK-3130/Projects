@@ -1,0 +1,11 @@
+B:\Sem4_50\VB.NET  and RDMS\VB.NET\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+B:\Sem4_50\VB.NET  and RDMS\VB.NET\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+B:\Sem4_50\VB.NET  and RDMS\VB.NET\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+B:\Sem4_50\VB.NET  and RDMS\VB.NET\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.xml
+B:\Sem4_50\VB.NET  and RDMS\VB.NET\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.vbproj.AssemblyReference.cache
+B:\Sem4_50\VB.NET  and RDMS\VB.NET\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.Resources.resources
+B:\Sem4_50\VB.NET  and RDMS\VB.NET\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.vbproj.GenerateResource.cache
+B:\Sem4_50\VB.NET  and RDMS\VB.NET\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.vbproj.CoreCompileInputs.cache
+B:\Sem4_50\VB.NET  and RDMS\VB.NET\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+B:\Sem4_50\VB.NET  and RDMS\VB.NET\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.xml
+B:\Sem4_50\VB.NET  and RDMS\VB.NET\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <input type="button" id="b1" onclick="getdata()" value="Get Data">
+    <p id="p1"></p>
+    <script>
+        var xmlhttp = null;
+        function getdata()
+        {
+            if(window.XMLHttpRequest)
+            {
+                xmlhttp = new XMLHttpRequest();
+            }
+            else
+            {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.open('GET', 'AJAX.xml', false);
+            xmlhttp.send();
+            xmlDoc = xmlhttp.responseXML;
+            var tags = xmlDoc.getElementsByTagName("note");
+            for(let i=0; i<tags.length; i++)
+            {
+                document.getElementById("p1").innerHTML+= "<br> Note: "+ i +" "+
+                xmlDoc.getElementsByTagName("to")[i].childNodes[0].nodeValue;
+                document.getElementById("p1").innerHTML += "  "+
+                xmlDoc.getElementsByTagName("from")[i].childNodes[0].nodeValue;
+                document.getElementById("p1").innerHTML += "  "+
+                xmlDoc.getElementsByTagName("body")[i].childNodes[0].nodeValue;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decomposing Url</title>
+</head>
+<script>
+    function decompose()
+    {
+        let url=document.getElementById("n1").value;
+        let a=url.split("/");
+        let a1=a[3].split(".");
+        // console.log(`<strong>Protocol : </strong>${a[0].slice(0,a[0].length-1)}`);
+        document.getElementById("d1").innerHTML+=a[0].slice(0,a[0].length-1);
+        document.getElementById("d2").innerHTML+=a[2];
+        document.getElementById("d3").innerHTML+=a1[0];
+        document.getElementById("d4").innerHTML+=a1[1];
+    }
+</script>
+<body>
+    <form>
+    <!-- <form name="Form" action="" onsubmit="return reverse()" method="post"> -->
+        Enter the URL 
+        <input type="text" id="n1" placeholder="Enter URL">
+        <br><br>
+        <input type="button" value="Decompose" id="b1" onclick="decompose()">
+        <div id="d1">Protocol : </div>
+        <div id="d2">Domain : </div>
+        <div id="d3">Page : </div>
+        <div id="d4">Extention : </div>
+    </form>   
+</body>
+</html>

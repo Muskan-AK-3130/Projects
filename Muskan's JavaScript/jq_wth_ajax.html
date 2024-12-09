@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        <script>
+            function jq_ajx()
+            {
+                $.ajax({url:"file.json",success:(data)=>{
+                        for(let i=0;i<data.users.length;i++)
+                        {
+                            let obj=data.users[i];
+                            console.log(obj);
+                            if(obj.uname==$('#uname').val())
+                            {
+                                if(obj.password==$('#pass').val())
+                                {
+                                    $("#d1").html("Login successful");
+                                }
+                            }
+                        }
+                    },
+                    
+                    error: (xhr, status, error) => {
+                        console.error("AJAX request failed:", status, error);
+                        // Display error message if AJAX request fails
+                        $("#d1").html("Failed to fetch data. Please try again later.");
+                        }
+                });
+            };
+            
+        </script>     
+    </head>
+    <body>
+        <form>
+            <input type="text" id="uname">
+            <input type="password" id="pass">
+            <input type="button" value="Submit" onclick="jq_ajx()">
+        </form>  
+         <div id="d1"></div>
+    </body>
+</html>

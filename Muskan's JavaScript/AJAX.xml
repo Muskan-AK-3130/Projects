@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<notes>
+    <note>
+        <to>abc1@w.com</to>
+        <from>pqr1.com</from>
+        <body>Hello XML DOM1</body>
+    </note>
+    <note>
+        <to>abc2@w.com</to>
+        <from>pqr2.com</from>
+        <body>Hello XML DOM2</body>
+    </note>  
+</notes>      

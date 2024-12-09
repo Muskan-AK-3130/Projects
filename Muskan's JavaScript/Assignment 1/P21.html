@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <table id="myTable" border="1">
+        <thead>
+            <tr>
+                <th>Roll no.</th>
+                <th>Name</th>
+                <th>Percentage</th>
+            </tr>
+        </thead>
+        <tbody>
+           <tr>
+                <td>1</td>
+                <td>Muskan</td>
+                <td>85%</td>
+           </tr>
+        </tbody>
+    </table>
+    
+    <br/><br/>
+    <button onclick="addRow()">Add Row</button>
+    
+    <script>
+        function addRow() {
+
+            let tableBody = document.querySelector('#myTable tbody');
+            
+            let newRow = document.createElement('tr');
+            
+            let cell1 = document.createElement('td');
+            cell1.textContent = '2';
+            
+            let cell2 = document.createElement('td');
+            cell2.textContent = 'Khushnaaz';
+
+            let cell3 = document.createElement('td');
+            cell3.textContent = '90%';
+            
+            newRow.appendChild(cell1);
+            newRow.appendChild(cell2);
+            newRow.appendChild(cell3);
+            
+            tableBody.appendChild(newRow);
+        }
+    </script>
+
+</body>
+</html>

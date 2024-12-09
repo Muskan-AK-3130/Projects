@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial</title>
+</head>
+<script>
+    function Validate()
+    {
+        let n=document.getElementById("n1").value
+        factorial(n);
+        function factorial(n)
+        {
+            if(n==0)
+                return 0;
+            else
+            if(n==1)
+                return 1;
+            else
+                return n*factorial(n-1);
+        }
+        document.getElementById("n2").value=factorial(n);
+    }
+</script>
+<body>
+    <form>
+    <!-- <form name="Form" action="" onsubmit="return reverse()" method="post"> -->
+        Enter Number
+        <input type="number" id="n1" placeholder="Enter the number">
+        <br><br>
+        Factorial
+        <input type="number" id="n2">
+        <input type="button" value="Factorial" id="b1" onclick="Validate()">
+    </form>
+</body>
+</html>

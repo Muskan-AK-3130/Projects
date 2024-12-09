@@ -1,0 +1,55 @@
+<html>
+<head>
+    <script type="text/javascript" language="javascript">
+        function show()
+        {
+            let a=document.getElementById("a1");
+            let b=a.getAttribute("href");
+            document.getElementById("d1").innerHTML="Href : "+b;
+            b=a.getAttribute("target");
+            document.getElementById("d2").innerHTML="Target : "+b;
+            b=a.getAttribute("rel");
+            document.getElementById("d3").innerHTML="Rel : "+b;
+            b=a.getAttribute("type");
+            document.getElementById("d4").innerHTML="Type : "+b;
+            b=a.getAttribute("hreflang");
+            document.getElementById("d5").innerHTML="Hreflang : "+b;
+
+            let c=document.getElementById("i1").value;
+            let d=a.getAttribute("target");
+            document.getElementById("d10").innerHTML="Target : "+d;
+            d=a.getAttribute("rel");
+            document.getElementById("d11").innerHTML="Rel : "+d;
+            d=a.getAttribute("type");
+            document.getElementById("d12").innerHTML="Type : "+d;
+            d=a.getAttribute("hreflang");
+            document.getElementById("d13").innerHTML="Hreflang : "+d;
+        }
+    </script>
+</head>
+<body>
+    <h1>Get attributes value</h1>
+    <a href="www.google.com" target="_self" rel="nofollow" type="text/html" hreflang="en" id="a1">
+        <img src="Image.png" height="200" width="300" alt="image" id="i1" target="_self" rel="nofollow" type="image/jpeg" hreflang="en" /></a>
+    <table>
+        <form>
+            <tr>
+                <td></td>
+                <td><input type="button" name="b1" value="Show" id="b1" onclick="show()" /></td>
+            </tr>
+        </form>
+    </table>
+    <h1>Attributes with values</h1>
+    <h3>a tag elements</h3>
+    <div id="d1"></div>
+    <div id="d2"></div>
+    <div id="d3"></div>
+    <div id="d4"></div>
+    <div id="d5"></div>
+    <h3>image tag elements</h3>
+    <div id="d10"></div>
+    <div id="d11"></div>
+    <div id="d12"></div>
+    <div id="d13"></div>
+</body>
+</html>

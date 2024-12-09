@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Minutes</title>
+</head>
+<script>
+    function addMinutes()
+    {
+        let minutes = document.getElementById("n1").value;
+        let currentDate = new Date();
+        let newDate = new Date(currentDate.getTime() + minutes * 60000);
+        let newHours = newDate.getHours();
+        let newMinutes = newDate.getMinutes();
+        document.getElementById("n2").value = newHours + " hours " + newMinutes + " minutes";
+    }
+</script>
+<body>
+    <form>
+    <!-- <form name="Form" action="" onsubmit="return reverse()" method="post"> -->
+        Enter a Minutes to be added
+        <input type="number" id="n1" placeholder="Enter Minutes">
+        <br><br>
+        New Time
+        <input type="text" id="n2">
+        <input type="button" value="Add" id="b1" onclick="addMinutes()">
+    </form>
+</body>
+</html>

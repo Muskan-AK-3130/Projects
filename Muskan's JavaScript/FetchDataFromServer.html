@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> Fetch Data From Server</h2>
+    <button onclick="getData()">Get Data</button>
+    <div id="response"></div>
+    <script>
+        //Function to fetch data from the server
+        function getData()
+        {
+            //Create a new XMLhttp request
+            var xhr=new XMLHttpRequest();
+            xhr.open('GET','https://dummy.restapiexample.com/api/v1/employee',true);
+            xhr.onload=function()
+            {
+                if(xhr.status>=200 && xhr.status<300)
+                {
+                    var responseData=JSON.parse(xhr.responseText);
+                    displayDtae(responseData.data);//Extracting 'data' property from the
+                }
+                else
+                {
+                    console.error('Request failed with status:',xhr.status);
+                }
+            };
+            xhr.onerror=function()
+            {
+                console.log("Error in sending request");
+            };
+            //Send request to the server
+            xhr.send();
+        }
+        //Function to display data on the webpage
+        function displayData(data)
+        {
+            //Get the div element where the response data will be displayed
+            var responseDiv=document.getElementById( 'response');
+            //Clear previous content in the response div
+            responseDiv.innerHTML='';//Clear previous content
+            for(var i=0;i<data.length;i++)
+            {
+                //Create a new div element for each data item
+                var item=document.createElement('div');
+                item.textContent='Data item : '+JSON.stringify(data[i]);
+                //Add this newly created div as child of 
+                responseDiv.appendChild(item);
+            }
+        }
+    </script>
+</body>
+</html>

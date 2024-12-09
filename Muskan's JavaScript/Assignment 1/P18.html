@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertin String To Array</title>
+</head>
+<script>
+    let a=[];
+    let s="";
+    function stringToArray()
+    {
+        s=prompt("Enter a Sentence");
+        a=s.split(" ");
+    }
+    function display()
+    {
+        let i;
+        for(i=0;i<a.length;i++)
+        {
+            alert("a["+i+"] = "+a[i]);
+        }     
+    }
+    stringToArray();
+    display();
+</script>
+</html>

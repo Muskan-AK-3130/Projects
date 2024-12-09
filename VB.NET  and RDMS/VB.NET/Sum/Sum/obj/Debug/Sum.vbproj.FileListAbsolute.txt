@@ -1,0 +1,12 @@
+F:\Sem4_50\VB.NET  and RDMS\VB.NET\Sum\Sum\bin\Debug\Sum.exe.config
+F:\Sem4_50\VB.NET  and RDMS\VB.NET\Sum\Sum\bin\Debug\Sum.exe
+F:\Sem4_50\VB.NET  and RDMS\VB.NET\Sum\Sum\bin\Debug\Sum.pdb
+F:\Sem4_50\VB.NET  and RDMS\VB.NET\Sum\Sum\bin\Debug\Sum.xml
+F:\Sem4_50\VB.NET  and RDMS\VB.NET\Sum\Sum\obj\Debug\Sum.vbproj.AssemblyReference.cache
+F:\Sem4_50\VB.NET  and RDMS\VB.NET\Sum\Sum\obj\Debug\Sum.Form1.resources
+F:\Sem4_50\VB.NET  and RDMS\VB.NET\Sum\Sum\obj\Debug\Sum.Resources.resources
+F:\Sem4_50\VB.NET  and RDMS\VB.NET\Sum\Sum\obj\Debug\Sum.vbproj.GenerateResource.cache
+F:\Sem4_50\VB.NET  and RDMS\VB.NET\Sum\Sum\obj\Debug\Sum.vbproj.CoreCompileInputs.cache
+F:\Sem4_50\VB.NET  and RDMS\VB.NET\Sum\Sum\obj\Debug\Sum.exe
+F:\Sem4_50\VB.NET  and RDMS\VB.NET\Sum\Sum\obj\Debug\Sum.xml
+F:\Sem4_50\VB.NET  and RDMS\VB.NET\Sum\Sum\obj\Debug\Sum.pdb

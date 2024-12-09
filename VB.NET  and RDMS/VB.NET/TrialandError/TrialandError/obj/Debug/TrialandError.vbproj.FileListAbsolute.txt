@@ -1,0 +1,12 @@
+F:\Sem4_50\VB.NET  and RDMS\VB.NET\TrialandError\TrialandError\obj\Debug\TrialandError.vbproj.AssemblyReference.cache
+F:\Sem4_50\VB.NET  and RDMS\VB.NET\TrialandError\TrialandError\obj\Debug\TrialandError.Form1.resources
+F:\Sem4_50\VB.NET  and RDMS\VB.NET\TrialandError\TrialandError\obj\Debug\TrialandError.Resources.resources
+F:\Sem4_50\VB.NET  and RDMS\VB.NET\TrialandError\TrialandError\obj\Debug\TrialandError.vbproj.GenerateResource.cache
+F:\Sem4_50\VB.NET  and RDMS\VB.NET\TrialandError\TrialandError\obj\Debug\TrialandError.vbproj.CoreCompileInputs.cache
+F:\Sem4_50\VB.NET  and RDMS\VB.NET\TrialandError\TrialandError\bin\Debug\TrialandError.exe.config
+F:\Sem4_50\VB.NET  and RDMS\VB.NET\TrialandError\TrialandError\bin\Debug\TrialandError.exe
+F:\Sem4_50\VB.NET  and RDMS\VB.NET\TrialandError\TrialandError\bin\Debug\TrialandError.pdb
+F:\Sem4_50\VB.NET  and RDMS\VB.NET\TrialandError\TrialandError\bin\Debug\TrialandError.xml
+F:\Sem4_50\VB.NET  and RDMS\VB.NET\TrialandError\TrialandError\obj\Debug\TrialandError.exe
+F:\Sem4_50\VB.NET  and RDMS\VB.NET\TrialandError\TrialandError\obj\Debug\TrialandError.xml
+F:\Sem4_50\VB.NET  and RDMS\VB.NET\TrialandError\TrialandError\obj\Debug\TrialandError.pdb

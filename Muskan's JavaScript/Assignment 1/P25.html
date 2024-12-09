@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Form</title>
+        <script>
+            function show()
+            {
+                var a=document.getElementById("t1").value;
+                var b=document.getElementById("t2").value;
+                var c=document.getElementById("r1").checked;
+                var d=document.getElementById("t3").value;
+                document.getElementById("d1").innerHTML="Name : "+a;
+                document.getElementById("d2").innerHTML="<br>Age : "+b;
+                if(c==true)
+                    document.getElementById("d3").innerHTML="<br>Gender : Male";
+                else
+                    document.getElementById("d3").innerHTML="<br>Gender : Female";
+                    document.getElementById("d4").innerHTML="<br>Address : "+d;
+            }
+        </script>
+    </head>
+    <body>
+        <table>
+            <form>
+                <tr>
+                    <td>Enter Name : </td>
+                    <td><input type="text" name="t1" id="t1"/></td>
+                </tr>
+                <tr>
+                    <td>Age : </td>                  
+                    <td><input type="text" name="t2" id="t2"/></td>
+                </tr>
+                <tr>
+                    <td>Gender : </td>
+                    <td>
+                        <input type="radio" id="r1" name="gender" value="male" />Male
+                        <input type="radio" id="r2" name="gender" value="female"/>Female
+                    </td>
+                </tr>
+                <tr>
+                    <td>Address : </td>
+                    <td>
+                        <textarea name="t3" id="t3" placeholder="enter  address here..." rows="4" cols="40"></textarea>
+                   
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="button" name="b1" id="b1" value="Submit"/>
+                        <input type="reset" name="b2" id="b2"/>
+                        <input type="button" name="b3" id="b3" value="Show" onclick="show()" />
+                    </td>
+                </tr>
+            </form>
+        </table>
+        <h2>Form elements with their values : </h2>
+        <div id="d1"></div>
+        <div id="d2"></div>
+        <div id="d3"></div>
+        <div id="d4"></div>
+    </body>
+</html>

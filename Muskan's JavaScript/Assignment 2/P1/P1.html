@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bill Amount Calculation</title>
+        <style>
+            span 
+            {
+                color: red;
+            }
+        </style>
+        <script src="P1.js"></script>
+    </head>
+    <body onload="first_focus()">
+        <h1>Bill Amount Calculation</h1>
+        <form method="post" onsubmit="validate_form()">
+            Bill Number
+            <input type="number" id="billNo" oninput="validate_billNumber(this,document.getElementById('s1'))">
+            <span id="s1">Enter Bill Number</span>
+            <br><br>
+            Bill Date
+            <input type="date" id="billDate" oninput="validate_billDate(this,document.getElementById('s2'))">
+            <span id="s2">Select Bill Date</span>
+            <br><br>
+            Bill Amount
+            <input type="number" id="billAmt" oninput="validate_billAmount(this,document.getElementById('s3'))">
+            <span id="s3">Enter Bill Amount</span>
+            <br><br>
+            <input type="button" id="b1" value="Calculate" onclick="calculateBill()">
+            <br><br>
+            <input type="reset" value="Reset">
+            <br><br>
+            Discount
+            <input type="number" id="discount" readonly>
+            <br><br>
+            Tax
+            <input type="number" id="tax" readonly>
+            <br><br>
+            Net Payment
+            <input type="number" id="netPayment" readonly>
+            <br><br>
+            <div id="d1"></div>
+        </form>
+    </body>
+</html>

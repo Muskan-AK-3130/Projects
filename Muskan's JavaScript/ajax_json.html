@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <script>
+            function add1()
+            {
+                var uname=document.getElementById("uname").value;
+                var pass=document.getElementById("pass").value;
+                if(window.XMLHttpRequest)
+                {
+                    var xhr = new XMLHttpRequest();
+                }
+                else
+                {
+                    var xhr = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                
+                xhr.open("GET","file.json",true);
+                xhr.send();
+                xhr.onreadystatechange = function get_obj()
+                {
+                    if(xhr.readyState == 4 && xhr.status == 200)
+                    {
+                        var obj = JSON.parse(xhr.responseText);
+                        console.log(obj);
+                        for(let i=0;i<obj.users.length;i++)
+                        {
+                            if(uname==obj.users[i].uname)
+                            {
+                                alert("user found");
+                                if(pass==obj.users[i].password)
+                                {
+                                    alert("Login successful");
+                                    break;
+                                }
+                                else
+                                {
+                                    alert("Incorrect password");
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+            async function async_await()
+            {
+                
+                    var uname=document.getElementById("uname").value;
+                    var pass=document.getElementById("pass").value;
+                    var response=await fetch('file.json');
+                    if(response.status==200)
+                    {
+                        var obj = JSON.parse(await response.text());
+                        console.log(obj);
+                        for(let i=0;i<obj.users.length;i++)
+                        {
+                            if(uname==obj.users[i].uname)
+                            {
+                                alert("user found");
+                                if(pass==obj.users[i].password)
+                                {
+                                    alert("Login successful");
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                
+            }
+            
+        </script>     
+    </head>
+    <body>
+        <form>
+            <input type="text" id="uname">
+            <input type="password" id="pass">
+            <input type="button" value="Submit" onclick="async_await()">
+        </form>  
+         
+    </body>
+</html>

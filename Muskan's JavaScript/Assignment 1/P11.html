@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Enter the first date</p>
+    <input type="date" id="date1"/>
+    
+    <p>Enter the second date</p>
+    <input type="date" id="date2"/>
+
+    <br/><br/>
+    <button id="btn" onclick="calculatediff()">Calculate Difference</button>
+
+    <br/><br/><br/><br/>
+    <p>Difference in days</p>
+    <input type="text" id="ans"/>
+
+
+    <script>
+
+        function differenceInDays(date1, date2) {
+        let oneDayInMilliseconds = 1000 * 60 * 60 * 24; // milliseconds in one day
+        let timeDifferenceInMilliseconds = Math.abs(date1 - date2);
+        return Math.round(timeDifferenceInMilliseconds / oneDayInMilliseconds);
+        }
+
+
+        function calculatediff(){
+
+            let date1=new Date(document.getElementById("date1").value)
+            let date2=new Date(document.getElementById("date2").value)
+
+            console.log(date1)
+            console.log(date2)
+
+            let diff=differenceInDays(date1,date2)
+            console.log(diff)
+
+            document.getElementById("ans").value=diff
+
+
+        }
+
+    </script>
+
+</body>
+</html>

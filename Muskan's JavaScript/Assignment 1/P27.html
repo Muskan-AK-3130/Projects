@@ -1,0 +1,38 @@
+<html>
+<head>
+
+</head>
+<body>
+    <h1>Count the select elements </h1>
+    <table>
+        <form>
+            <tr>
+                <td>Country : </td>
+                <td>
+                    <select id="i1">
+
+                    </select>
+                </td>
+            </tr>
+        </form>
+    </table>
+    <script type="text/javascript" language="javascript">
+        function display()
+        {
+            let a=document.getElementById("i1");
+            let arr=["Select City","India","USA","France","Nepal"];
+            for(i=0;i<3;i++)
+            {
+                arr.push(prompt("Enter country names : "));
+            }
+            for(i=0;i<arr.length;i++)
+            {
+                let ce=document.createElement("option");
+                ce.textContent=arr[i];
+                a.appendChild(ce);
+            }
+        }
+        window.onload=display;
+    </script>
+</body>
+</html>

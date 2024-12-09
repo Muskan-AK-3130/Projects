@@ -1,0 +1,16 @@
+{
+    "students":[
+        {
+            "spid":"0123456789",
+            "password":"Muskan@3130"
+        },
+        {
+            "spid":"1123456789",
+            "password":"Aarshi@10"
+        },
+        {
+            "spid":"2123456789",
+            "password":"Tamanna@18"
+        }
+    ]
+}

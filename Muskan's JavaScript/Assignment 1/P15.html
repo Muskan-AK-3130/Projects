@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Search</title>
+</head>
+<script>
+    let a=[];
+    function input()
+    {
+        let i;
+        for(i=0;i<5;i++)
+        {
+            a.push(parseInt(prompt("Enter 5 elements of array")));
+        }
+    }
+    function binarySearch()
+    {
+        let value=parseInt(prompt("Enter the element you want to search"));
+        let lb=0, ub=4, mid, pos=-1;
+        while(lb<=ub)
+        {
+            mid=Math.floor((lb+ub)/2);
+            if(value==a[mid])
+            {
+                pos=mid;
+                break;
+            }
+            else
+            if(value>a[mid])
+                lb=mid+1;
+            else
+                ub=mid-1;
+        }
+        if(pos!=-1)
+            alert("Element found at index "+pos);
+        else
+            alert("Element not found");
+    }
+    input();
+    binarySearch();
+</script>>
+</html>

@@ -1,0 +1,468 @@
+ASSIGNMENT - 1
+
+
+
+
+
+Table 1 : Student Master
+
+
+CREATE TABLE Stud_Master
+(
+     rollno number(3) PRIMARY KEY check(rollno>=1),
+     sem number(2) NOT NULL,
+     div varchar2(1) NOT NULL,
+     name varchar2(20) NOT NULL,
+     contact number(10) NOT NULL,
+     area varchar2(20) NOT NULL,
+     city varchar2(15) NOT NULL check(city in('Surat','Baroda','Navsari','Valsad')),
+     dob date NOT NULL,
+     bgp varchar2(2) NOT NULL,
+     gender varchar2(10) NOT NULL
+);
+
+
+
+INSERT INTO Stud_Master
+VALUES(1, 4 , 'A' , 'Muskan Jain' , 9898588821 , 'Vesu' , 'Surat' , '30-APR-2004' , 'A+' , 'Female');
+INSERT INTO Stud_Master
+VALUES(2, 4 , 'A' , 'Kiran Jain' , 9824134522 , 'Vesu' , 'Surat' , '14-MAY-1974' , 'A+' , 'Female');
+INSERT INTO Stud_Master
+VALUES(3, 4 , 'A' , 'Ashok Jain' , 7874892711 , 'Vesu' , 'Surat' , '21-APR-1971' , 'A+' , 'Male');
+INSERT INTO Stud_Master
+VALUES(4, 4 , 'B' , 'Aarshi Italiya' , 9033090336 , 'Ghod Dhod Road' , 'Baroda' , '10-AUG-2004' , 'A+' , 'Female');
+INSERT INTO Stud_Master
+VALUES(5, 4 , 'B' , 'Shruti Jain' , 9879214466 , 'Athwalines' , 'Navsari' , '28-SEP-2004' , 'A+' , 'Female');
+INSERT INTO Stud_Master
+VALUES(6, 4 , 'B' , 'Prachi Sanklecha' , 7573882332 , 'Citylight' , 'Valsad' , '21-MAY-2003' , 'A+' , 'Female');
+
+
+
+
+
+Table 2 : Student Marks
+
+
+CREATE TABLE Stud_Marks
+(
+     
+     div varchar2(1) NOT NULL,
+     rdbms number(2) NOT NULL check(rdbms>=1 and rdbms<=100),
+     micro number(2) NOT NULL check(micro>=1 and micro<=100),
+     es number(2) NOT NULL check(es>=1 and es<=100),
+     wd number(2) NOT NULL check(wd>=1 and wd<=100),
+     rollno number(3) REFERENCES Stud_Master(rollno)
+);
+
+
+
+INSERT INTO Stud_Marks
+VALUES('A' , 98 , 98 , 98 , 98 , 1);
+INSERT INTO Stud_Marks
+VALUES('A' , 99 , 99 , 99 , 99 , 2);
+INSERT INTO Stud_Marks
+VALUES('A' , 97 , 97 , 97 , 97 , 3);
+INSERT INTO Stud_Marks
+VALUES('B' , 96 , 96 , 96 , 96 , 4);
+INSERT INTO Stud_Marks
+VALUES('B' , 95 , 95 , 95 , 95 , 5);
+INSERT INTO Stud_Marks
+VALUES('B' , 94 , 94 , 94 , 94 , 6);
+
+
+
+
+
+Table 3 : Activity
+
+
+CREATE TABLE Activity
+(
+     activity_id varchar2(5) PRIMARY KEY,
+     act_name varchar2(20) NOT NULL,
+     act_date date NOT NULL 
+);
+
+
+
+INSERT INTO Activity
+VALUES('A01' , 'Singing' , '18-MAR-2024');
+INSERT INTO Activity
+VALUES('A02' , 'Dancing' , '18-MAR-2024');
+INSERT INTO Activity
+VALUES('A03' , 'Sports' , '19-MAR-2024');
+INSERT INTO Activity
+VALUES('A04' , 'Poster Competition' , '19-MAR-2024');
+INSERT INTO Activity
+VALUES('A05' , 'Technical Games' , '20-MAR-2024');
+INSERT INTO Activity
+VALUES('A06' , 'Song' , '01-MAR-2016');
+
+
+
+
+
+Table 4 : Participant
+
+
+CREATE TABLE Participant
+(
+     div varchar2(1) NOT NULL,
+     activity_id varchar2(5) REFERENCES Activity(activity_id),
+     perf_grade varchar2(2) NOT NULL,
+     rollno number(3) REFERENCES Stud_Master(rollno)
+);
+
+
+
+INSERT INTO Participant
+VALUES('A' , 'A01' , 'A+' , 1);
+INSERT INTO Participant
+VALUES('A' , 'A01' , 'A+' , 2);
+INSERT INTO Participant
+VALUES('A' , 'A01' , 'A+' , 3);
+INSERT INTO Participant
+VALUES('B' , 'A02' , 'A' , 4);
+INSERT INTO Participant
+VALUES('B' , 'A03' , 'B+' , 5);
+INSERT INTO Participant
+VALUES('B' , 'A04' , 'B' , 6);
+
+
+
+
+
+Table 5 : Fees
+
+     
+CREATE TABLE Fees
+(
+	payment_id varchar2(5) PRIMARY KEY,
+	day_ofpay date,
+	amount number(10),
+	div varchar2(1) NOT NULL,
+	rollno number(3) NOT NULL,
+	FOREIGN KEY (rollno) REFERENCES Stud_master(rollno)
+);
+
+
+
+INSERT INTO Fees
+VALUES('P01' , '01-AUG-2022' , 22000 , 'A' , 1);
+INSERT INTO Fees
+VALUES('P02' , '01-AUG-2022' , 22000 , 'A' , 2);
+INSERT INTO Fees
+VALUES('P03' , '01-AUG-2022' , 22000 , 'A' , 3);
+INSERT INTO Fees
+VALUES('P04' , '02-AUG-2022' , 22000 , 'B' , 4);
+INSERT INTO Fees (payment_id,div,rollno)
+VALUES('P05' , 'B' , 5);
+INSERT INTO Fees
+VALUES('P06' , '04-AUG-2022' , 22000 , 'B' , 6);
+
+
+
+
+
+Table 6 : Assignment
+
+
+CREATE TABLE Assignment
+(
+	assigno varchar2(7) PRIMARY KEY,
+	subject varchar2(30) NOT NULL,
+	assigndate date NOT NULL,
+	faculty varchar2(20) NOT NULL
+);
+
+
+
+INSERT INTO Assignment
+VALUES('Ass01' , 'Environmental Science' , '10-MAR-2024' , 'Rasna Lunia');
+INSERT INTO Assignment
+VALUES('Ass02' , 'IOT' , '07-MAR-2024' , 'Hitesh Lad');
+INSERT INTO Assignment
+VALUES('Ass03' , 'VB.NET' , '10-FEB-2024' , 'Devyangi Chahan');
+INSERT INTO Assignment
+VALUES('Ass04' , 'RDBMS' , '11-FEB-2024' , 'Maitri Hingu');
+INSERT INTO Assignment
+VALUES('Ass05' , 'Web Development' , '03-FEB-2024' , 'Rupal Panchal');
+INSERT INTO Assignment
+VALUES('Ass06' , 'Image Processing' , '12-JAN-2024' , 'Shailesh CHauhan');
+
+
+
+
+
+Table 7 : Assign_Subm
+
+
+
+CREATE TABLE Assign_Subm
+(
+	sub_status varchar(20) NOT NULL,
+	subdate date,
+	grade varchar2(3),
+	rollno number(3) NOT NULL,
+        assigno varchar2(7)NOT NULL,
+	FOREIGN KEY (rollno) REFERENCES Stud_master(rollno),
+	FOREIGN KEY (assigno) REFERENCES Assignment(assigno)
+);
+
+
+
+INSERT INTO Assign_Subm
+VALUES('Submitted' , '10-MAR-2024' , 'A+' , 1 , 'Ass01');
+INSERT INTO Assign_Subm
+VALUES('Submitted' , '07-Mar-2024' , 'A+' , 2 , 'Ass02');
+INSERT INTO Assign_Subm
+VALUES('Submitted' , '10-FEB-2024' , 'A+' , 3 , 'Ass03');
+INSERT INTO Assign_Subm
+VALUES('Not-Submitted' , '11-MAR-2024' , 'A' , 4 , 'Ass04');
+INSERT INTO Assign_Subm
+VALUES('Not-Submitted' , '07-FEB-2024' , 'B+' , 5 , 'Ass05');
+INSERT INTO Assign_Subm(sub_status,rollno,assigno)
+VALUES('Not-Submitted' , 6 , 'Ass06');
+
+
+
+
+
+Table 8 : Book
+
+
+CREATE TABLE Book
+(
+	bookid varchar2(5)PRIMARY KEY,
+	bookname varchar2(20) NOT NULL,
+	author varchar2(20) NOT NULL,
+	price number(10) NOT NULL
+);
+
+
+
+INSERT INTO Book
+VALUES('B01' , 'ANSCII' , 'Balagurusawamy' , 500);
+INSERT INTO Book
+VALUES('B02' , 'Ikigai' , 'Murakami' , 450);
+INSERT INTO Book
+VALUES('B03' , '8051 Architecture , 'Kenneth Ayala' , 400);
+INSERT INTO Book
+VALUES('B04' , '2 States' , 'Chetan Bhagat' , 500);
+INSERT INTO Book
+VALUES('B05' , 'C++' , 'Parul Patel' , 600);
+INSERT INTO Book
+VALUES('B06' , 'DBMS' , 'Maitri Hingu' , 550);
+
+
+
+
+
+Table 9 : BookIssueReturn
+
+
+CREATE TABLE BookIssueReturn
+(
+	status varchar(7) NOT NULL,
+	irdate date NOT NULL,
+	rollno number(3) NOT NULL,
+	bookid varchar2(5) NOT NULL,
+	FOREIGN KEY (rollno) REFERENCES Stud_master(rollno),
+	FOREIGN KEY (bookid) REFERENCES Book(bookid)
+);
+
+
+
+INSERT INTO BookIssueReturn
+VALUES('Return' , '12-FEB-2024' , 1 , 'B01');
+INSERT INTO BookIssueReturn
+VALUES('Issue' , '12-FEB-2024' , 2 , 'B01');
+INSERT INTO BookIssueReturn
+VALUES('Issue' , '17-FEB-2024' , 3 , 'B02');
+INSERT INTO BookIssueReturn
+VALUES('Issue' , '21-FEB-2024' , 4 , 'B03');
+INSERT INTO BookIssueReturn
+VALUES('Issue' , '22-FEB-2024' , 5 , 'B04');
+INSERT INTO BookIssueReturn
+VALUES('Return' , '26-FEB-2024' , 6 , 'B03');
+
+
+
+
+
+
+
+QUERIES :
+
+
+
+1.  ALTER TABLE Stud_Master
+    ADD Age number(2);
+
+    ALTER TABLE Stud_Marks
+    ADD Total number(5);
+     
+    ALTER TABLE Stud_Marks
+    ADD SGPA number(5);
+
+
+2.  UPDATE Stud_Master
+    SET Age=(SYSDATE-dob)/365;
+
+    UPDATE Stud_Marks
+    SET Total=(rdbms+micro+es+wd);
+
+    UPDATE Stud_Marks
+    SET SGPA=(Total/4)/10;
+
+
+3.  SELECT *
+    FROM Stud_Master
+    WHERE area='Citylight';
+
+
+4.  SELECT *
+    FROM Stud_Master
+    WHERE name like 'P%' OR name like 'p%';
+
+
+5.  SELECT st.rollno,st.div,st.name,st.gender,m.rdbms,m.micro
+    FROM Stud_Master st, Stud_Marks m
+    WHERE m.rdbms>70 AND m.micro>70 AND st.rollno=m.rollno;
+
+
+6.  SELECT *
+    FROM Stud_Master
+    WHERE city='Surat' AND bgp='A+';
+
+
+7.  SELECT st.rollno,st.sem,st.div,st.name,st.gender,a.act_name,f.day_ofpay
+    FROM Stud_Master st, Activity a, Participant p, Fees f 
+    WHERE st.rollno=f.rollno AND st.rollno=p.rollno AND a.activity_id=p.activity_id AND f.day_ofpay>'01-JAN-2016' AND a.act_name='Poster Competition';
+
+
+8.  SELECT *
+    FROM Activity
+    WHERE act_date='01-MAR-2016';
+
+
+9.  SELECT *
+    FROM Stud_Master
+    ORDER BY name;
+
+
+10. SELECT *
+    FROM Stud_Master
+    WHERE name like 'S%' AND div='B'; 
+
+
+11. SELECT AVG(rdbms) AS "RDBMS", AVG(es) AS "Environmental Science"
+    FROM Stud_Marks;
+
+
+12. SELECT st.rollno,st.sem,st.div,st.name,st.gender,m.rdbms
+    FROM Stud_Master st, Stud_Marks m
+    WHERE st.rollno=m.rollno AND m.rdbms IN (SELECT MAX(s.rdbms) AS "Maximum Of RDBMS"
+					     FROM Stud_Master st,Stud_Marks m
+					     WHERE st.rollno=m.rollno);				
+
+
+13. SELECT st.rollno,st.sem,st.div,st.name,st.gender,a.act_name
+    FROM Stud_Master st, Activity a, Participant p
+    WHERE st.rollno=p.rollno AND a.activity_id=p.activity_id AND a.act_name='Dance';
+
+
+14. SELECT st.rollno,st.sem,st.div,st.name,st.gender
+    FROM Stud_Master st, Fees f
+    WHERE st.rollno=f.rollno AND amount IS NULL;
+
+
+
+SELECT *
+FROM Stud_Master
+WHERE rollno NOT IN (SELECT rollno FROM Fees);
+
+
+15. ALTER TABLE Stud_Master
+    DROP COLUMN bgp;
+
+
+16. SELECT st.rollno,st.sem,st.div,st.name,st.gender,a.act_name,p.perf_grade
+    FROM Stud_Master st, Activity a, Participant p
+    WHERE st.rollno=p.rollno AND a.activity_id=p.activity_id AND p.perf_grade='A';
+
+
+17. SELECT st.rollno,st.sem,st.div,st.name,st.gender,a.act_name
+    FROM Stud_Master st, Activity a, Participant p
+    WHERE st.rollno=p.rollno AND a.activity_id=p.activity_id AND st.gender='Female' AND st.city='Surat' AND a.act_name='Sports' AND a.act_name='Dance';
+
+ 
+18. SELECT COUNT(st.rollno)
+    FROM Stud_Master st, Activity a, Participant p
+    WHERE st.rollno=p.rollno AND a.activity_id=p.activity_id AND st.gender='Male' AND a.act_name='Sports';
+
+
+19. SELECT st.rollno,st.sem,st.div,st.name,st.gender,m.rdbms,a.act_name,p.perf_grade
+    FROM Stud_Master st, Stud_Marks m, Activity a, Participant p
+    WHERE st.rollno=p.rollno AND a.activity_id=p.activity_id AND st.rollno=m.rollno AND m.rdbms>70 AND a.act_name='Song' AND p.perf_grade='A';
+
+
+20. SELECT st.rollno,st.sem,st.div,st.name,st.gender,m.rdbms,a.act_name,p.perf_grade
+    FROM Stud_Master st, Stud_Marks m, Activity a, Participant p
+    WHERE st.rollno=p.rollno AND a.activity_id=p.activity_id AND st.rollno=m.rollno AND m.es>80 AND a.act_name='Singing' AND p.perf_grade='B';
+
+
+22. SELECT st.rollno,st.sem,st.div,st.name,st.gender,ass.subject
+    FROM Stud_Master st, Assignment ass, Assign_Subm sb
+    WHERE ass.assigno=sb.assigno AND sb.rollno=st.rollno AND ass.subject='RDBMS';
+
+
+23. SELECT COUNT(assigno),subject
+    FROM Assignment
+    GROUP BY subject;
+
+
+24. SELECT ass.assigno,ass.subject,ass.assigndate,ass.faculty,sb.sub_status
+    FROM Assignment ass, Assign_Subm sb
+    WHERE ass.assigno=sb.assigno AND sb.sub_status='Not Submitted';
+
+
+25. SELECT st.rollno,st.sem,st.div,st.name,st.gender,sb.sub_status,a.act_name
+    FROM Stud_Master st, Assign_Subm sb, Activity a, Participant p
+    WHERE st.rollno=sb.rollno AND sb.rollno=p.rollno AND sb.sub_status='Not Submitted' AND a.act_name='Sports';
+    
+
+26. SELECT st.rollno,st.sem,st.div,st.name,st.gender,a.act_name,b.bookname
+    FROM Stud_Master st, Stud_Marks m, Activity a, Participant p, Book b, BookIssueReturn bir
+    WHERE st.rollno=bir.rollno AND b.bookid=bir.bookid AND b.bookname='RDBMS' AND bir.status='Issue' AND p.activity_id=a.activity_id AND a.act_name='Dance' AND m.rdbms>80;
+
+
+27. SELECT COUNT (bookid)
+    FROM BookIssueReturn
+    WHERE status='Issue';
+
+
+28. SELECT st.rollno,st.sem,st.div,st.name,st.gender
+    FROM Book b,BookIssueReturn bir,Assignment ass,Assign_Subm sb,Stud_Master st
+    WHERE b.bookid=bir.bookid AND bir.status='Issue' AND b.price>500 AND ass.assigno=sb.assigno AND st.rollno=bir.rollno AND sb.sub_status='Not Submitted' AND ass.subject='RDBMS'; 
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT *
+FROM TAB;
+
+
+DESC 
+
+
+SELECT *
+FROM Activity;

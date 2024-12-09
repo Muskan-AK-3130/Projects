@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Star Rating Calculation</title>
+    <style>
+        span
+        {
+            color: red;
+        }
+    </style>
+    <script>
+        function validate_hotelName(hotelName, s1) 
+        {
+            if (hotelName.value == "") 
+            {
+               s1.innerHTML = "Enter Hotel Name";
+               hotelName.focus();
+               return false;
+            }
+            else 
+            {
+                s1.innerHTML = "";
+                return true;
+            }
+        }
+        function calculateStarRating() 
+        {
+            let amenities = 0                
+            let hotelName = document.getElementById("hotelName")
+            let s1 = document.getElementById('s1')              
+            if (validate_hotelName(hotelName, s1)) 
+            {
+                if (document.getElementById("y1").checked)
+                    amenities++;
+                if (document.getElementById("y2").checked)
+                    amenities++;
+                if (document.getElementById("y3").checked)
+                    amenities++;
+                if (document.getElementById("y4").checked)
+                    amenities++;
+                if (document.getElementById("y5").checked)
+                    amenities++;
+                if (document.getElementById("y6").checked)
+                    amenities++;
+                if (document.getElementById("y7").checked)
+                    amenities++;
+                if (amenities <= 3)
+                    alert("It is a 3 star hotel")
+                else
+                if (amenities == 4)
+                    alert("Itis a 4 star hotel")
+                else
+                    alert("Itis a 5 star hotel")
+            }
+            else
+                document.getElementById("d1").innerHTML = "Details are not filled properly"
+        }
+        function first_focus()
+        {
+            document.getElementById('hotelName').focus();
+        }
+    </script>
+</head>
+<body onload="first_focus()">
+    <h1>Hotel Star Rating</h1>
+    <form method="post" onsubmit="validate_hotelName()">
+        <b>Hotel Name</b>
+        <input type="text" id="hotelName" oninput="validate_hotelName(this,document.getElementById('s1'))">
+        <span id="s1"></span>
+        <br><br>
+        <b>Hotel Amenities</b>
+        <br><br>
+        Conference Room
+        <input type="radio" id="y1" value="Yes">
+        <input type="radio" id="n1" value="No">
+        <br><br>
+        Swimming Pool
+        <input type="radio" id="y2" value="Yes">
+        <input type="radio" id="n2" value="No">
+        <br><br>
+        Gym
+        <input type="radio" id="y3" value="Yes">
+        <input type="radio" id="n3" value="No">
+        <br><br>
+        Wi Fi Internet
+        <input type="radio" id="y4" value="Yes">
+        <input type="radio" id="n4" value="No">
+        <br><br>
+        24 Hours Restaurant
+        <input type="radio" id="y5" value="Yes">
+        <input type="radio" id="n5" value="No">
+        <br><br>
+        Credit Card Payment
+        <input type="radio" id="y6" value="Yes">
+        <input type="radio" id="n6" value="No">
+        <br><br>
+        24 Hours Reception Counter
+        <input type="radio" id="y7" value="Yes">
+        <input type="radio" id="n7" value="No">
+        <br><br>
+        <input type="button" id="b1" value="Calculate" onclick="calculateStarRating()">
+        <input type="reset" value="Reset">
+        <br><br>
+        <div id="d1"></div>
+    </form>
+</body>
+</html>

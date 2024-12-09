@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies</title>
+</head>
+<body onload="first_focus()">
+    <!-- <h1>Bill Amount Calculation</h1> -->
+    <form method="post" onsubmit="validate_form()">
+        Username
+        <input type="number" id="username" oninput="validate_billNumber(this,document.getElementById('s1'))">
+        <span id="s1"></span>
+        <br><br>
+        Password
+        <input type="date" id="password" oninput="validate_billDate(this,document.getElementById('s2'))">
+        <span id="s2"></span>
+        <br><br>
+        Remember My Id
+        <input type="checkbox" id="remember" onclick="setCookie()"/>
+        <span id="s3"></span>
+        <br><br>   
+    </form>         
+</body>
+</html>

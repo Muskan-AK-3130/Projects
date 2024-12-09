@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count elements</title>
+</head>
+<body>
+    <div id="heading">
+        <h1>This is first heading 1</h1>
+        <h2>This is heading 2</h2>
+        <h1>This is second heading 1</h1>
+        <h1>This is third heading 1</h1>
+        <h1>This is fourth heading 1</h1>
+        <h1>This is fifth heading 1</h1>      
+    </div>
+    <script>
+        const h1tags=document.getElementsByTagName('h1');
+        console.log(h1tags);
+            document.write("No of h1 tags in the document : "+h1tags.length);
+    </script>
+</body>
+</html>

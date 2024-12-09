@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery Get a Form Field Value</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#get-data").click(function(){
+        var name = $("#name").val();
+        var comment = $("#comment").val();
+        var city = $("#city").val();
+
+        alert("<b>"+name+"</b> "+comment+" "+city);
+        $("#showdata").html("<b>"+name+"</b> "+comment+" "+city);
+        //text, html, append
+        $("#showdata").append($("#get-data").text());
+        $("#showdata1").html($("#showdata").html())
+
+        //$("#showdata1").html($("#showdata").html());        
+    });
+});
+</script>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td>
+                    <input type="text" id="name">
+                </td>
+            </tr>
+            <tr>
+                <td>Comments:</td>
+                <td>
+                    <textarea rows="4" cols="30" id="comment"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>City:</td>
+                <td>
+                    <select id="city">
+                        <option>Surat</option>
+                        <option>Baroda</option>
+                        <option>Mumbai</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <p><strong>Note:</strong> Fill the above form and click the following button to get the value.</p>
+    <button type="button" id="get-data">Get Data</button>
+    <div id="showdata"></div>
+    <div id="showdata1"></div>
+</body>
+</html>  

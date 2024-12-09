@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculation</title>
+</head>
+<script>
+    function calculateAge()
+    {
+        let birth_date=document.getElementById("n1").value;
+        let a=birth_date.split("/");
+        let currentDate = new Date();
+        let currentYear=currentDate.getFullYear();
+        let currentMonth=currentDate.getMonth();
+        if(currentMonth>=a[1])
+            document.getElementById("n2").value=(currentYear-a[2])+" years "+(currentMonth-a[1])+" months";
+        else
+            document.getElementById("n2").value=(currentYear-a[2]-1)+" years "+(12-a[1]+currentMonth)+" months";
+    }
+</script>
+<body>
+    <form>
+    <!-- <form name="Form" action="" onsubmit="return reverse()" method="post"> -->
+        Enter your Birth Date (dd/mm/yyyy)
+        <input type="text" id="n1" placeholder="Enter Birth Date">
+        <br><br>
+        Age
+        <input type="text" id="n2">
+        <input type="button" value="Calculate" id="b1" onclick="calculateAge()">
+    </form>
+</body>
+</html>

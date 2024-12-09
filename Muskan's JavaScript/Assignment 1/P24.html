@@ -1,0 +1,33 @@
+<html>
+<head>
+    <script type="text/javascript" language="javascript">
+        function change()
+        {
+            var x=document.getElementById("t1").value;
+            var y=document.getElementById("t2").value;
+            document.getElementById("i1").height=x;
+            document.getElementById("i1").width=y;
+        }
+    </script>
+</head>
+<body>
+    <h1>Change the height and width of image</h1>
+    <img src="Image.png" height="200" width="300" alt="image" id="i1" />
+    <table>
+        <form>
+            <tr>
+                <td>Enter the height : </td>
+                <td><input type="text" name="t1" id="t1" /></td>
+            </tr>
+            <tr>
+                <td>Enter the width : </td>
+                <td><input type="text" name="t2" id="t2" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="button" name="b1" value="Change" id="b1" onclick="change()" /></td>
+            </tr>
+        </form>
+    </table>
+</body>
+</html>

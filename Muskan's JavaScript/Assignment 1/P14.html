@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum Of Array Elements</title>
+</head>
+<script>
+    let a=[];
+    function input()
+    {
+        let i;
+        for(i=0;i<5;i++)
+        {
+            a.push(parseInt(prompt("Enter 5 elements of array")));
+        }
+    }
+    function sum()
+    {
+        let sum=0;
+        let i;
+        for(i=0;i<5;i++)
+            sum=sum+a[i];
+        alert("Sum Of Array Elements Is "+sum);
+    }
+    input();
+    sum();
+</script>
+</html>
